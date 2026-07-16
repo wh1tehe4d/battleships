@@ -1,6 +1,10 @@
+#ifndef MECH
+#define MECH
 #include <stdint.h>
 
 #define BOARD_SIZE 10
+#define NICKNAME_LEN 128
+#define PLAYER_COUNT 4
 
 typedef struct board {
     uint8_t fields[BOARD_SIZE][BOARD_SIZE];
@@ -21,4 +25,10 @@ typedef struct position {
     uint8_t col;
 } position;
 
-position get_pos(uint8_t* pos);
+typedef struct status {
+    uint8_t player_count;
+    uint8_t players[PLAYER_COUNT];
+    uint8_t names[PLAYER_COUNT][NICKNAME_LEN];
+    board boards[PLAYER_COUNT];
+} status;
+#endif

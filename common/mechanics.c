@@ -15,11 +15,3 @@ char get_symbol(ship ship) {
             return 'S';
     }
 }
-
-position get_pos(uint8_t* pos) {
-    position p = {
-                    pos[0] - '1',
-                    pos[1] - 'A'
-                };
-    return p;
-}
